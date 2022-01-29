@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 无序列表 -->
+    <!-- ul只能包含li标签 -->
+    <ul>
+        <li>榴莲</li>
+        <li>香蕉</li>
+        <li>苹果</li>
+    </ul>
+
+    <!-- 有序列表 -->
+    <ol>
+        <li>张三：100分</li>
+        <li>李四：90分</li>
+        <li>王五：80分</li>
+    </ol>
+
+    <!-- 自定义列表 -->
+    <!-- dl标签中只允许包含dt/dd标签，dt/dd标签可以包含任意内容 -->
+    <dl>
+        <dt>帮助中心</dt>
+        <dd>账户管理</dd>
+        <dd>账户保存</dd>
+    </dl>
+    <br>
+
+    <!-- 表格 -->
+    <!-- 
+         table：表格整体，可用于包含多个tr
+         tr：表格每行，可用于包裹td
+         td：表格单元格，可用于包裹内容
+    -->
+    <!-- 
+         table属性
+         border：边框宽度 
+         width：表格宽度(一般用css)
+         height：表格高度(一般用css)
+    -->
+    <table border="1" width="600" heigth="400">
+        <tr>
+            <td>姓名</td>
+            <td>成绩</td>
+            <td>评语</td>
+        </tr>
+        <tr>
+            <td>小哥哥</td>
+            <td>100分</td>
+            <td>牛逼</td>
+        </tr>
+        <tr>
+            <td>小姐姐</td>
+            <td>90分</td>
+            <td>也不错</td>
+        </tr>
+        <tr>
+            <td>总结</td>
+            <td>郎才女貌</td>
+            <td>郎才女貌</td>
+        </tr>
+    </table>
+    <br>
+
+
+    <!-- 表格标题、表格单元格 
+         caption：表格大标题
+         th：表头单元格
+    -->
+    <table border="1" width="600" heigth="400">
+        <caption>
+            <strong>学生成绩单</strong>
+        </caption>
+        <tr>
+            <th>姓名</th>
+            <th>成绩</th>
+            <th>评语</th>
+        </tr>
+        <tr>
+            <td>小哥哥</td>
+            <td>100分</td>
+            <td>牛逼</td>
+        </tr>
+        <tr>
+            <td>小姐姐</td>
+            <td>90分</td>
+            <td>也不错</td>
+        </tr>
+        <tr>
+            <td>总结</td>
+            <td>郎才女貌</td>
+            <td>郎才女貌</td>
+        </tr>
+    </table>
+
+    <!-- 表格的结构标签（没有视觉上的变化，方便浏览器解析）
+         thead：表格头部
+         tbody：表格主题
+         tfoot：表格底部
+    -->
+
+    <table border="1" width="600" heigth="400">
+        <caption>
+            <strong>学生成绩单</strong>
+        </caption>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>成绩</th>
+                <th>评语</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>小哥哥</td>
+                <td>100分</td>
+                <td>牛逼</td>
+            </tr>
+            <tr>
+                <td>小姐姐</td>
+                <td>90分</td>
+                <td>也不错</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>总结</td>
+                <td>郎才女貌</td>
+                <td>郎才女貌</td>
+            </tr>   
+        </tfoot>
+    </table>
+
+    <!-- 合并单元格 
+         1.跨行合并：rowspan
+         2.跨列合并：colspan
+         左上原则，确定保留谁删除谁，上线合并，只保留最上，删除其他；左右合并，只保留最左，删除其他
+         注意：不能跨结构合并 thead,tbody,tfoot
+    -->
+    <table border="1" width="600" heigth="400">
+        <caption>
+            <strong>学生成绩单</strong>
+        </caption>
+        <tr>
+            <th>姓名</th>
+            <th>成绩</th>
+            <th>评语</th>
+        </tr>
+        <tr>
+            <td>小哥哥</td>
+            <td rowspan="2">100分</td>
+            <td>牛逼</td>
+        </tr>
+        <tr>
+            <td>小姐姐</td>
+            <td>也不错</td>
+        </tr>
+        <tr>
+            <td>总结</td>
+            <td colspan="2">郎才女貌</td>
+        </tr>
+    </table>
+</body>
+</html>

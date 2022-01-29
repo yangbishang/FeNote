@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+           1.标签选择器：选中所有的这个标签都生效
+           2.类选择器：
+           3.id选择器：不用于css，是配合js使用的，先了解下
+           4.通配符选择器：找到页面中所有的标签，设置样式
+        */
+        
+        /* 
+            1. 标签选择器
+               格式：标签 {}
+        */
+        p {
+            color: green;
+        }
+    
+        /* 
+            2. 类选择器
+               格式：.类名 {}
+        */
+        .red {
+            color: red;
+        }
+        .size {
+            font-size: 66px;
+        }
+
+        /* 
+            3. id选择器
+               格式：#id属性值 {}
+        */
+        #blue {
+            color: blue;
+        }
+
+        /* 
+            4. 通配符选择器
+               格式：* {}
+        */    
+        * {
+             /* 内外边距清除 */
+            margin: 0; 
+            padding: 0;
+        }
+       
+    </style> 
+</head>
+
+<body>
+    <p>标签选择器</p>
+    <p>标签选择器</p>
+
+    <p class="red">类选择器</p> 
+    <div class="red size">类选择器</div> <!-- 一个标签可以使用多个类名,空格隔开即可 -->
+
+    <div id="blue">id选择器</div>   <!-- id属性值类似于身份证号码，在一个页面中是唯一的，不然js找不到-->
+    
+    
+
+
+</body>
+</html>

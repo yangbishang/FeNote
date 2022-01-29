@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        css引入方式
+        1.内嵌式：css写在style标签中，style标签一般写在head标签里面，title标签中（小案例）
+        2.外链式：写在一个单独的.css文件中，通过link标签在网页中引入（项目）
+        3.行内式：写在style属性中（频率低，配合js使用）
+    -->
+
+    <style>
+        /* 01：内嵌式 */
+        /* 
+        p {
+            color: red;
+            font-size: 30px;
+        } 
+        */
+    </style>
+    
+    <!-- 02：外链式 -->
+    <link rel="stylesheet" href="./01demo.css">
+</head>
+<body>
+
+    <p>这是一个p标签</p>
+
+    <!-- 03：行内式 -->
+    <div style="color: green; font-size: 30px;">这是div标签</div>
+</body>
+</html>

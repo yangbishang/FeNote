@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+          1. 块级元素
+          2. 行内元素
+          3. 行内块元素
+          4. 元素显示模式转换
+        */
+
+
+        /* 块级（block）
+           显示特点：
+           1.独占一行
+           2.宽度默认是父元素的宽度，高度默认由内容撑开
+           3.可以设置宽高
+           代表标签：div、p、h系列、ul、li、dl、dt、dd、form、header、nav、footer...
+        */
+        .c1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+
+        /* 行内（inline）
+           显示特点：
+           1.一行可以显示多个
+           2.宽度和高度默认由内容撑开（与内容大小相同）
+           3.不可以设置宽高
+           代表标签：a、span、b、u、i、s、strong、ins、em、del...
+         */
+        .c2 {
+            /* width、height 不生效 */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+         }
+
+
+        /* 行内块（inline-block）
+           显示特点：
+           1. 一行可以显示多个
+           2. 可以设置宽高
+           代表标签：input、textarea、button、select、
+           ps：img有行内块元素特点，但chrone调试工具中显示结果是inline
+         */
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* 元素显示模式转换
+           目的：改变元素默认的显示特点，让元素符合布局要求
+           语法：
+           display: block -> 转成块级元素，使用较多
+           display: inline-block -> 转换成行内块元素，使用较多
+            display: inline -> 转换成行内元素，使用极少
+         */
+         .c4 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+            display: inline-block;
+         }
+
+
+    </style>
+</head>
+<body>
+    <div class="c1">块级元素</div>
+    <br><br>
+    
+
+    <span class="c2">行内</span>
+    <span class="c2">行内</span>
+    <br><br>
+
+    <img src="../../resource/img/图片45.png" alt="">
+    <img src="../../resource/img/图片45.png" alt="">
+    <br><br>
+
+    <div class="c4">转换</div>
+    <div class="c4">转换</div>
+
+</body>
+</html>

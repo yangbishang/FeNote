@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 背景颜色
+         */
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-color: #ccc;
+            background-color: pink;
+        }
+        
+        /* 背景图片
+         */
+        .img {
+            width: 1200px;
+            height: 1200px;
+            background-image: url(../../resource/img/图片45.png);
+        }
+
+        /* 背景平铺
+           取值：
+           1.repeat：水平和垂直方向都平铺（默认值）
+           2.no-repeat：不平铺（用得最多）
+           3.repeat-x：沿水平方向平铺
+           4.repeat-y：沿垂直方向平铺
+         */
+        .img1 {
+            width: 1200px;
+            height: 1200px;
+            background-image: url(../../resource/img/图片45.png);
+            background-repeat: no-repeat;
+        }
+
+        /* 背景位置
+           方位名词：
+            1.水平方向：left,center,right
+            2.垂直方向：top,center,bottom
+           数字+px（坐标）：
+            1.坐标系：原点（盒子左上角）,x轴,y轴
+         */
+         .img2 {
+            width: 1200px;
+            height: 1200px;
+            background-color: royalblue;
+            background-image: url(../../resource/img/图片45.png);
+            background-repeat: no-repeat;
+            background-position: right 0;
+            background-position: center center;
+        }
+
+        /* 背景 background（复合属性）
+           语法：background (bg)
+           属性值：单个属性值的合写，取值之间以空格隔开
+           书写顺序：无所谓，但是推荐顺序为：color image repeat position
+         */
+         .background {
+             width: 400px;
+             height: 400px;
+             /* 背景图位置如果是英文单词可以颠倒顺序 */
+             background: pink url(../../resource/img/图片45.png) no-repeat center bottom;
+         }
+
+        /* img 与 background 的区别
+           重要的用img，不重要，去掉不影响的用background
+         */
+         
+
+    </style>
+</head>
+<body>
+    <div>div</div>
+    <br><br><br>
+
+    <div class="img"></div>
+    <br><br><br>
+
+    <div class="img1"></div>
+    <br><br><br>
+
+    <div class="img2"></div>
+    <br><br><br>
+
+    <div class="background"></div>
+</body>
+</html>

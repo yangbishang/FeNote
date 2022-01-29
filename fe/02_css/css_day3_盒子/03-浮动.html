@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 结构伪类选择器
+           作用：根据元素在html中的结构关系查找元素
+           优势：减少对html中类的依赖，有利于保持代码整洁
+           场景：常用于查找某父级选择器中的子元素
+           选择器                  :        说明
+           E:first-child {}       :  匹配父元素中第一个子元素，并且是E元素
+           E:last-child {}        :  匹配父元素中的最后一个子元素，并且是E元素
+           E:nth-child(n) {}      :  匹配父元素中第n个子元素，并且是E元素
+           E:nth-last-child(n){}  :  匹配父元素中倒数第n个子元素，并且是E元素
+        */
+        ul li:first-child {
+            background-color: green;
+        }
+        ul li:last-child {
+            background-color: pink;
+        }
+
+        ul li:nth-last-child(3) {
+            background-color: blue;
+        }
+        ul li:nth-child(3) {
+            background-color: red;
+        }
+
+       /* 结构伪类选择器 公式
+          E:nth-child(n) {} : 括号里是可以填公式的
+          n的注意点
+          1. n为： 0、1、2、3、4、5、6、......
+          2. 通过n可以组成常见公式
+          功能            :   公式
+          偶数            :   2n、even
+          奇数            :   2n+1、2n-1、odd
+          找到前五个       :   -n+5
+          找到从第五个往后  :   n+5
+       */
+       ol li:nth-child(4n){
+          background-color: green;   
+       }
+
+       /* 伪元素
+          概念：一般页面中的非主体内容（装饰性的不重要的小图，比如箭头）可以使用伪元素
+          区别：1. 元素：HTML设置的标签
+               2. 伪元素：由css模拟出的标签效果
+          种类：
+          伪元素     :          作用
+          ::before  :  在父元素内容的最前添加一个伪元素
+          ::after   :  在父元素内容的最后添加一个伪元素
+          注意点：
+          1. 必须设置content属性才生效
+          2. 伪元素默认是行内元素 
+        */
+        .father {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+
+        .father::before {
+            /*内容*/
+            content: '我是';
+            color: green;
+        }
+
+        .father::after {
+            content: '哈哈';
+            color: red;
+        }
+
+        /* 标准流
+           又称文档流，是浏览器在渲染显示网页内容时，默认采用的一套排版规则，规定了应该以何种方式排列元素
+           常见标准流排版规则：
+           1. 块级元素：从上往下，垂直布局，独占一行
+           2. 行内元素 或 行内块元素：从左往右，水平布局，空间不够自动折行    
+         */
+
+         /* 行内块问题
+            浏览器解析行内块或行内标签时，如果标签换行书写会产生一个空格
+          */
+
+         /* 浮动
+            早期作用：图文环绕
+            现在作用：网页布局（比如让块级标签，完美的在一行展现 ）
+            特点：
+            1. 浮动元素会脱离标准流，在标准流中不占位置（相当于从地面飘到了空中）
+            2. 浮动元素比标准流高半个级别，可以覆盖标准流中的元素
+            3. 浮动找浮动，下一个浮动元素会在上一个浮动元素后面左右浮动
+            4. 浮动元素有特殊的显示效果（1.一行可以显示多个 2.可以设置宽高）
+            5. 浮动元素不能通过 text-align:center 或者 margin:0 auto 居中
+            ps：
+            浮动的标签，顶对齐
+            浮动在一行排列，宽高生效 -- 浮动后的标签具备行内块特点
+            */
+            img {
+                float: left;
+            }
+
+            .one {
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+                float: left;
+            }
+
+            .two {
+                width: 200px;
+                height: 200px;
+                background-color: skyblue;
+                /* float: left; */
+            }
+            .three {
+                width: 300px;
+                height: 300px;
+                background-color: blue;
+                float: right;
+            }
+
+            /* css书写顺序：浏览器执行效率更高
+               1. 浮动 / display
+               2. 盒子模型：margin border padding 宽度高度背景色
+               3. 文字样式
+            
+            
+            */
+
+
+    </style>
+</head>
+<body>
+    <!-- ul>li{只是第$个li}*8 -->
+    <ul>
+        <li>只是第1个li</li>
+        <li>只是第2个li</li>
+        <li>只是第3个li</li>
+        <li>只是第4个li</li>
+        <li>只是第5个li</li>
+        <li>只是第6个li</li>
+        <li>只是第7个li</li>
+        <li>只是第8个li</li>
+    </ul>
+
+    <ol>
+        <li>只是第1个li</li>
+        <li>只是第2个li</li>
+        <li>只是第3个li</li>
+        <li>只是第4个li</li>
+        <li>只是第5个li</li>
+        <li>只是第6个li</li>
+        <li>只是第7个li</li>
+        <li>只是第8个li</li>
+    </ol>
+
+    <div class="father">伪元素</div>
+    <br>
+    <br>
+
+    <!-- 网页布局：块在一行排列 -->
+    <div class="one">one</div>
+    <div class="two">two</div>
+    <div class="three">two</div>
+    <br>
+
+    <!-- 图文环绕 -->
+    <!-- <img src="../../resource/img/moto.png" alt="">
+    阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发
+    阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发发阿斯顿发发阿斯顿
+    阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发
+    阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发发阿斯顿发发阿斯顿 -->
+
+</body>
+</html>

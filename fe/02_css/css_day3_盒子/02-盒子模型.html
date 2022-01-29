@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 盒子
+           概念：页面中的每一个标签，都可以看做是一个盒子 
+           构成：
+           1. 内容区：content --> 苹果电脑
+           2. 内边距区域：padding --> 苹果电脑与纸盒之间的距离
+           3. 边框区域：border --> 纸盒的厚度
+           4. 外边距区域：margin --> 两个纸盒之间的距离
+           ps：padding borader 会撑大盒子，如果对盒子尺寸有要求，记得调整（css3可以自动内减）
+        */
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /* 内边距 */
+            padding: 20px;
+            /* 边框线 */
+            border: 10px solid black;
+            /* 外边距 */
+            margin: 50px;
+            
+            /* 变成css3的盒子模型，好处：加了border和padding不需要手动做减法 */
+            /* 加上后盒子size就是300x300px，没加就需要要再减去 padding和border的值，即 240x240px */
+            box-sizing: border-box;
+        }
+        /* 内容区：content
+           属性：width,height
+        */
+
+
+        /* 内边框区域：padding
+           属性可以当做复合属性使用，表示单独设置某个方向的内边距
+           padding: 10px 20px 30px 10px
+        */
+
+        /* 边框区域：border
+           属性名： border -方位名称 
+           属性值：单个取值连写 
+           eg: border:10px solid red; 
+               border-left:10px solid red
+        */
+
+        /* 自动内减
+           操作：给盒子设置属性 box-sizing:border-box;即可
+           浏览器会自动计算多余大小，自动在内容中减去
+         */
+
+         /* 清除默认的内外边距
+            浏览器会默认给部分标签设置默认的 padding 和 margin，但一般在项目开始前需要先清除这些标签默认的 padding 和 margin，后续自己设置
+         */
+         * {
+                margin: 0;
+                padding: 0;
+            }
+
+        /* 版心居中*/
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /* 0代表上下， auto代表左右 */
+            margin: 0 auto;
+        }
+
+        /* 外边距折叠现象 
+           垂直布局 的 块级元素，上下的margin会合并
+           结果：最终两者距离为margin的最大值
+           解决方案：只给其中一个盒子设置margin即可
+        */
+
+        /* 外边距折叠现象
+           场景：互相嵌套 的 块级元素，子元素的 margin-top会作用在父元素上
+           结果：导致父元素一起往下移动
+           解决方案：
+           1. 给父元素设置border-top 或者 padding-top（分割父子元素的margin-top）
+           2. 给父元素设置 overflow: hidden --》 比较好
+           3. 转换成行内块元素
+           4. 设置浮动
+        */
+        .father {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+
+            overflow: hidden;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+
+            /* margin-top: 30px; */
+        }
+
+        /* 行内元素的内外边距问题
+           如果想要通过 margin 和 padding 改变行内标签的垂直位置，无法生效
+           行内标签的 margin-top 和 bottom 不生效
+           行内标签的 padding-top 和 bottom 不生效
+        */
+        span {
+            line-height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>内容1</div>
+    <div>内容2</div>
+
+    <div calss = "father">
+        <div class = "son">son</div>
+    </div>
+
+    <span>span</span>
+    <span>span</span>
+</body>
+</html>

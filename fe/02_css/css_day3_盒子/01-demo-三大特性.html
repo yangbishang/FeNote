@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 选择器的三大特性
+           1.继承性
+           2.层叠性
+           3.优先性
+        */
+
+        /* css 继承性
+           控制文件的属性能继承，非控制文件属性的不能继承
+        */
+
+        /* css 层叠性
+           也就是覆盖
+        */
+
+        /* 优先性
+           特性：不同选择器具有不同的优先级，优先级高的选择器样式会覆盖优先级低选择器样式
+           优先级公式：（选择器越精准，优先级越高）
+           继承 < 通配符选择器 < 标签选择器 < 类选择器 < id选择器 < 行内样式 < !important
+           ps:
+           1. !important写在属性值后面，分号的前面
+           2. !important不能提升继承的优先级，只要是继承优先级最低
+           3. 实际开发中不建议使用!important
+        */
+        .p1 {
+            color: green;
+        }
+        a {
+            color: red !important;
+        }
+
+        /* 权重叠加计算
+           场景：如果是复合选择器，此时需要通过重叠计算方法，判断最终那个选择器优先级最高会生效
+           比较规则：(行内样式的个数（第一级），id选择器的个数（第二级），类选择器的个数（第三级），标签选择器的个数（第四级）)
+           先比较第一级，如果比较出来了，之后就不看了，不行就继续往下看
+        */
+
+        /* （0, 1, 0, 1） */
+        div #one {
+            color: orange;
+        }
+
+        /* （0, 0, 2, 0） */
+        .father .son {
+            color: skyblue;
+        }
+
+        /* （0, 0, 1, 1） */
+        .father p {
+            color: purple;
+        }
+
+        /* （0, 0, 0, 2） */
+        div p {
+            color: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <a class = "p1">优先级</p>
+
+    <div class="father">
+        <p calss="son" id="one">权重叠加</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除浮动
+           含义：清除浮动带来的影响（如果子元素浮动了，此时子元素不能撑开标准流的块级父元素）
+           原因：子元素浮动后脱标->不占位置
+           目的：需要父元素有高度，从而不影响其他网页元素的布局
+           解决方案：
+           1. 父级加高度
+           2. 额外标签法：
+           操作：
+           在父元素内容的最后添加一个块级元素
+           给添加的块级元素设置 clear:both
+           缺点：需要增加额外的标签，破坏之前的结构
+           3. 单伪元素清除法
+           操作：用伪元素替代额外的标签
+           优点：项目中使用，直接给标签加类即可清除浮动
+           4. 双伪元素法
+           5. overflow
+           给父元素设置 overflow:hidden
+           操作：
+           直接给父元素设置overflow:hidden
+           有点：方便
+
+        */
+
+        .top {
+            margin: 0 auto;
+            width: 1000px;
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        .bottom {
+            height: 100px;
+            background-color: green;
+        }
+
+        .left {
+            float: left;
+            width: 200px;
+            height: 300px;
+            background-color: #ccc;
+        }
+
+        .right {
+            float: right;
+            width: 790px;
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        /* 额外标签法 */
+        .clearfix {
+            /* 清除左右两侧浮动的影响 */
+            clear: both;
+        }
+
+        /* 单伪元素清除法 */
+        .clearfix::after {
+            /* 伪元素必须添加此属性 */
+            content: '';
+            /* 伪元素是行内 */
+            display: block;
+            clear: both;
+
+            /* 为了兼容性 */
+            height: 0;
+            visibility: hidden;
+        }
+
+        /* 双伪元素法 */
+        /* .clearfix::before 作用：解决外边距坍塌问题
+            外边距塌陷：父子标签，都是块级，子集加margin会影响父级位置
+        */
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: table;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 父子级标签，子集浮动，父级没有高度，后面的标准流盒子会受影响，显示到上面的位置 -->
+    <div class="top clearfix">
+        <div calss="left"></div>
+        <div class="right"></div>
+        <!-- 额外标签法 -->
+        <div class="clearfix"></div>
+
+    </div>
+    <div class="bottom"></div>
+    
+</body>
+</html>
