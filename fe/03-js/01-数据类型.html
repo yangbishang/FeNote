@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        /*
+            输入输出语句
+            1. alert(msg): 浏览器弹出警示框
+            2. console.log(msg): 浏览器控制台打印出输出信息
+            3. prompt(info): 浏览器弹出输出入框，用户可以输入
+        */
+
+        /* 
+            变量
+            俗话：变量是用于存放数据的容器。我们通过变量名获取数据，甚至数据可以修改
+            本质：变量是程序在内存中申请的一块用来存放数据的空间
+            更新：一个变量被重新赋值后，它原有的值就会被覆盖，变量值将以最后一次赋值为准、
+                1. 只申明不符值：undefined
+                2. 不申明不符值：报错，
+                3. 不申明直接赋值：可以使用的（不提倡）
+        */
+        // 变量的初始化
+        var age = 18;
+        console.log(age);
+        var myname = prompt('请输入你的名字');
+        alert(myname);
+
+        
+        /*
+            数据类型
+            javascript 是一种弱类型或者说动态语言，这意味着不用提前声明变量类型，在程序运行过程中，类型会被自动确定
+            这也意味着相同的变量可用作不同的类型
+            简单数据类型：Number,String,Boolean,Undefined,Null
+            复杂数据类型：object
+         
+        */
+
+        /* 
+            简单数据类型
+            简单数据类型            说明                                   默认值
+            Number      数字型，包含整型值和浮点型值，如21、0.21                0
+            Boolean     布尔值类型，如true、false，等价于1和0                false
+            String      字符串类型，如”张三” 注意咱们js里面，字符串都带引号       “”
+            Undefined   var a;申明了变量a但是没有给值，此时 a=undefined      undefined
+            Null        var a = null; 声明了变量a 为空值
+        */
+
+        /* 
+           数字型进制
+           最常见的进制有二进制、八进制、十进制、十六进制
+           在js中八进制见面加 0，十六进制见面加 0x
+        */
+        var num1 = 07;    // 八进制 对应十进制的7
+        var num2 = 0xA;   // 十六进制 
+
+        /* 
+            数字型范围
+        */
+        var num = Number.MAX_VALUE;   // 最大值
+        var num = Number.MIN_VALUE;   // 最小值
+        var num = Infinity;  // 代表无穷大，大于任何值
+        var num = -Infinity; // 代表无穷小，小于任何数值
+        var num = NaN;     // 代表一个非数值
+
+        var isNull = isNaN(num); // isNaN()，判断是否非数字类型，返回true或false
+
+        /* 
+            字符串型
+            字符串型可以是引号中的任意文本，其语法为双引号和单引号
+            因为HTML标签里面的属性使用的是双引号，JS这里我们更推荐使用单引号 
+        */
+
+        /* 
+            字符串引号嵌套
+            JS可以用单引号嵌套双引号，或者用双引号嵌套单引号（外双内单，外单内双）
+        */
+        var strMsg = '我是“高富帅”';
+        console.log(strMsg);
+
+        /*
+            字符串转义符
+            转义符号都是\开头，常用的转义符即说明如下
+            转义符       解释说明
+            \n       换行符，n是newline的意思
+            \\       斜杠\
+            \’       ‘ 单引号
+            \"       " 双引号
+            \t       tab 缩进
+            \b       空格，b是blank的意思
+        */
+
+        /* 
+            字符长度与拼接
+            长度： .length
+            拼接
+                1. 多个字符串之间可以使用 + 进行拼接，其拼接方式为 字符串 + 任何类型 = 拼接之后的新字符串
+                2. 拼接前会把字符串相加的任何类型转成字符串，再拼接成一个新的字符串
+        */
+
+        /*
+            获取检测变量的数据类型
+            typeof
+        */
+        var num = 18;
+        console.log(typeof num);
+
+        /* 
+            数据类型转换 
+            1. 转换为字符串类型
+            2. 转换成数字型
+            3. 转换为布尔型
+        */
+        
+        /* 
+            转换成字符串：
+            1. toString()
+            2. String()
+            3. 加号拼接字符串
+        */
+        var num = 1;
+        var str = num.toString();
+        str = String(num);
+        str = num + "我的字符串";
+
+        /*
+            转换为数字型
+            1. parseInt(String) 函数：将string类型转成整数数值型
+            2. parseFloat(String) 函数：将string类型转成浮点数数值型
+            3. Number() 强制转换函数：将string类型转换为数值型
+            4. js 隐式转换(- * /)：利用算数运算隐式转换为数值型
+        */
+
+        /* 
+            转换为布尔类型
+            Boolean()函数 
+            1. 代表空、否定的值 会被转换为 false，如 ’‘、0、NaN、null、undefined
+            2. 其余值都会被转为true
+        */
+        var b = Boolean('');  // false
+        b = Boolean('小白');   // true
+
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

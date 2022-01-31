@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            数组
+            数组是指一组数据的集合，其中的每个数据被称作元素，在数组中可以存放任意类型的元素。数组是一种将一组数据存储在单个变量名下的优雅方式
+            数组创建的两种方式
+                1. new 创建数组  ->  var 数组名 = new Array();   // 创建一个新的空数组
+                2. 利用数组字面量创建数组  ->  var  数组名 = ['小白','小黑','大黄','瑞奇'];
+            数组可以存放任意类型的数据，列如字符串、数字、布尔值
+                1. var  数组名 = ['小白','小黑','大黄','瑞奇'];
+            数组新增元素
+                1. 通过修改length长度来实现数组扩容的目的（length属性是可读写的）
+                2. 可以通过修改数组索引的方式追加数组元素（不能直接给数组名赋值，否则会覆盖掉以前的数据）
+        */
+       var arr = [1,2,3,4,5];
+        
+        
+       /* 
+            函数
+            就是封装了一段可被重复调用执行的代码块。通过此代码块可以实现大量代码的重复使用。
+            函数的使用：
+                1. 申明函数
+                function 函数名() {
+                    //函数体代码
+                }
+                2. 调用函数
+                函数名();
+            形参和实参
+                1. 声明函数时，函数名称后面的小括号中添加一些参数
+                2. 调用该函数时，同样也需要传递相应的参数，这些参数被称为实参
+                ps: 在javaScript中，形参的默认值是 undefined
+            break ,continue ,return 的区别
+                break ：结束当前的循环体（如 for、while）
+                continue ：跳出本次循环，继续执行下次循环（如 for、while）
+                return ：不仅可以退出循环，还能够返回 return 语句中的值，同时还可以结束当前的函数体内的代码
+        */
+
+        // 声明函数
+        function getSum(){
+            var sumNum = 0;// 准备一个变量，保存数字和
+            for (var i = 1; i <= 100; i++) {
+                sumNum += i;// 把每个数值 都累加 到变量中
+            }
+            alert(sumNum);
+        }
+        // 调用函数
+        getSum();
+
+       
+        /* 
+        arguments的使用
+        当我们不确定有多少个参数传递的时候，可以用 arguments 来获取。
+        在 JavaScript 中，arguments 实际上它是当前函数的一个内置对象。
+        所有函数都内置了一个 arguments 对象，arguments 对象中存储了传递的所有实参。
+        
+        arguments展示形式是一个伪数组，因此可以进行遍历。伪数组具有以下特点：
+            1. 具有 length 属性
+            2. 按索引方式储存数据
+            3. 不具有数组的 push , pop 等方法
+        */
+
+        // 利用函数求任意个数的最大值
+        function maxValue() {
+            var max = arguments[0];
+            for (var i = 0; i < arguments.length; i++) {
+                if (max < arguments[i]) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }   
+        console.log(maxValue(2, 4, 5, 9));
+        console.log(maxValue(12, 4, 9));
+
+        /* 
+        函数的两种申明方式
+        1. 自定义函数方式（命名函数）
+            function fn() {...}      // 声明定义方式
+            fn();                    // 调用  
+        2. 函数表达式方式（匿名函数）
+            var fn = function(){...}；   // 这是函数表达式写法，匿名函数后面跟分号结束
+            fn();     // 调用的方式，函数调用必须写到函数体下面
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

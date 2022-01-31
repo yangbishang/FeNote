@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 对象
+        对象是由属性和方法组成的。
+            属性：事物的特征，在对象中用属性来表示（常用名词）
+            方法：事物的行为，在对象中用方法来表示（常用动词）
+        
+        采用三种方式创建对象
+            1. 利用字面量创建对象
+            2. 利用 new Object 创建对象
+            3. 利用构造函数创建对象       
+        */
+
+        /* 字面量创建对象 */
+        var star = {
+            name : 'pink',
+            age : 18,
+            sex : '男',
+            sayHi : function(){
+                alert('大家好啊~');
+            }
+        };
+
+        /* 对象的调用 
+            1. 对象里面的属性调用 : 对象.属性名 ，这个小点 . 就理解为“ 的 ”  
+            2. 对象里面属性的另一种调用方式 : 对象[‘属性名’]，注意方括号里面的属性必须加引号，我们后面会用      
+            3. 对象里面的方法调用：对象.方法名() ，注意这个方法名字后面一定加括号      
+        */
+       console.log(star.name);
+       console.log(star['name']);
+       star.sayHi();
+        
+        /* new Object 创建对象 */
+        var andy = new Object();
+        andy.name = 'pink';
+        andy.age = 18;
+        andy.sex = '男';
+        andy.sayHi = function() {
+            alert('大家好啊~');
+        }
+
+        /* 利用构造函数创建对象 
+            对象里面的属性调用 : 对象.属性名 ，这个小点 . 就理解为“ 的 ”  
+            对象里面属性的另一种调用方式 : 对象[‘属性名’]，注意方括号里面的属性必须加引号，我们后面会用      
+            对象里面的方法调用：对象.方法名() ，注意这个方法名字后面一定加括号 
+            注意
+                1.构造函数约定首字母大写。
+                2.函数内的属性和方法前面需要添加 this ，表示当前对象的属性和方法。
+                3.构造函数中不需要 return 返回结果。
+                4.当我们创建对象的时候，必须用 new 来调用构造函数。
+
+        */
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sayHi = function() {
+                alert('我的名字叫：' + this.name + '，年龄：' + this.age + '，性别：' + this.sex);
+            }
+        }
+        var bigbai = new Person('大白', 100, '男');
+        var smallbai = new Person('小白', 21, '男');
+        console.log(bigbai.name);
+        console.log(smallbai.name);
+
+        /* 遍历对象属性 */
+        for (var k in bigbai) {
+            console.log(k);  
+            console.log(bigbai[k]);      
+        }
+
+        /* new 关键字
+        new在执行时会做四件事情
+        1.在内存中创建一个新的空对象
+        2.让 this 指向这个新对象
+        3.执行构造函数里面的代码，给这个信息对象添加属性和方法
+        4.返回这个新对象（所以构造函数里面不需要return）  
+        */
+
+        /* 内置对象
+        JavaScript 中的对象分为3种：自定义对象 、内置对象、 浏览器对象
+        前面两种对象是JS 基础 内容，属于 ECMAScript；  第三个浏览器对象属于我们JS 独有的， 我们JS API 讲解
+        内置对象就是指 JS 语言自带的一些对象，这些对象供开发者使用，并提供了一些常用的或是最基本而必要的功能（属性和方法）
+        内置对象最大的优点就是帮助我们快速开发
+        JavaScript 提供了多个内置对象：Math、 Date 、Array、String等       
+        */
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
