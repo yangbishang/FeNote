@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button class="motoButton">摩托车</button>
+    <button class="notMotoButton">不是拖车</button>
+    <br>
+    <img src="../resource/img/moto.png" alt="">
+
+    <script>
+        var img = document.querySelector('img');
+        var motoButton = document.querySelector('.motoButton');
+        motoButton.onclick = function() {
+            img.src = '../resource/img/moto.png';
+        }
+        var notMotoButton = document.querySelector('.notMotoButton');
+        notMotoButton.onclick = function() {
+            img.src = '../resource/img/剪头.png'
+        }
+
+    </script>
+</body>
+</html>

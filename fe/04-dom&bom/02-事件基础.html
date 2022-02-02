@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 事件基础
+         JavaScript 使我们有能力创建动态页面，而事件是可以被 JavaScript 侦测到的行为。
+         简单理解： 触发--- 响应机制。
+         网页中的每个元素都可以产生某些可以触发 JavaScript 的事件，例如，我们可以在用户点击某按钮时产生一个 事件，然后去执行某些操作。
+    -->
+
+    <!-- 事件的三个要素
+         1. 事件源 （谁）
+         2. 事件类型 （什么事件，如何触发）
+         3. 事件处理程序 （做啥）
+    -->
+    <button id="btn">唐伯虎</button>
+    <script>
+        // （1）事件源：按钮
+        var btn = document.getElementById('btn');
+        // （2）事件类型：鼠标点击 onclick
+        // （3）事件处理程序：通过一个函数赋值方式
+        btn.onclick = function() {
+            alert('点秋香');
+        }
+    </script>
+
+    <!-- 执行事件的步骤
+        1. 获取事件源
+        2. 注册事件（绑定事件）
+        3. 添加事件处理程序（采取函数赋值形式）
+        eg：
+        点击div，控制台输出，我被选中
+     -->
+     <div>123</div>
+     <script>
+         // 1. 获取事件源
+         var div = document.querySelector('div');
+         // 2. 绑定事件，注册事件
+         // div.onclick
+         // 3. 添加事件处理程序
+         div.onclick = function() {
+             console.log('我被选中了');
+         }
+     </script>
+    
+     <!-- 
+        鼠标时间         触发条件
+        onclick        鼠标点击左键触发
+        onmouseover    鼠标经过触发
+        onmouseout     鼠标离开触发
+        onfocus        获得鼠标焦点触发
+        onblur         失去鼠标焦点触发
+        onmousemove    鼠标移动触发
+        onmouseup      鼠标弹起触发
+        onmousedown    鼠标按下触发
+      -->
+
+</body>
+</html>

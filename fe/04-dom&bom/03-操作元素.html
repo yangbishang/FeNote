@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .change {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            color: #fff;
+            font-size: 25px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        JavaScript 的 DOM 操作可以改变网页内容、结构和样式，我们可以利用 DOM 操作元素来改变元素里面的内容、属性等。注意以下都是属性
+     -->
+
+     <button>显示当前系统时间</button>
+     <div>某个时间</div>
+
+     <script>
+        // 当我们点击了按钮，div里面的文字就会发生变化
+        // 1. 获取元素
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.onclick = function() {
+            div.innerText = "2022-2-1";
+        }
+     </script>
+
+     <!-- innerText 和 innerHTML 的区别 -->
+     <p>今天是: 2022年2月1号</p>
+     <div id="inner">今天是: 2022年2月1号</div>
+     <script>
+        // innerText （非标准的，一般不用）
+        var p = document.querySelector('p');
+        p.innerText = '<strong>今天是：</strong> 2022年';
+
+        // innerHTML 识别html标签（起始位置到终止位置的全部内容，包括 html 标签，同时保留空格和换行）
+        var div = document.querySelector('#inner');
+        div.innerHTML = '<strong>今天是：</strong> 2022年';
+     </script>
+
+     <!-- 常用元素的属性操作 
+        1. innerText、innerHTML 改变元素内容
+        2. src、href
+        3. src、href
+     -->
+     
+     <!-- 样式属性操作
+        1. element.style     行内样式操作
+        2. element.className 类名样式操作
+        注意：
+        1. JS 里面的样式采取驼峰命名法 比如 fontSize、 backgroundColor
+        2. JS 修改 style 样式操作，产生的是行内样式，CSS 权重比较高
+        3. 如果样式修改较多，可以采取操作类名方式更改元素样式。 
+        4. class因为是个保留字，因此使用className来操作元素类名属性
+        5. className 会直接更改元素的类名，会覆盖原先的类名。
+      -->
+      <div class="first">文本</div>
+      <script>
+          // 1. 使用 element.style 获得修改元素样式  如果样式比较少 或者 功能简单的情况下使用
+          var test = document.querySelector('.first');
+          test.onclick = function() {
+              // 让我们当前元素的类名改为了 change
+              this.className = 'change';
+  
+              // 如果想要保留原先的类名，我们可以这么做 多类名选择器（使用了 first 和 change）
+              // this.className = 'first change'; 
+          }
+      </script>
+</body>
+</html>

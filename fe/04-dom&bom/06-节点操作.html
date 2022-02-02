@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 为什么学节点操作 
+        利用 DOM 提供的方法获取元素
+        1. document.getElementById() 
+        2. document.getElementsByTagName()
+        3. document.querySelector  等
+        4. 逻辑性不强、繁琐
+        
+        利用节点层级关系获取元素
+        1. 利用父子兄节点关系获取元素
+        2. 逻辑性强，但是兼容性稍差
+
+        这两种方式都可以获取元素节点，我们后面都会使用，但是节点操作更简单
+    -->
+
+    <!-- 节点概述
+        一般地，节点至少拥有nodeType（节点类型）、nodeName（节点名称）和nodeValue（节点值）这三个基本属性：
+        （1）元素节点  nodeType  为 1  -> 各种标签，比如 head,body,div等
+        （2）属性节点  nodeType  为 2  -> 各种内置或自定义属性，比如class,id等
+        （3）文本节点  nodeType  为 3  -> 文本节点包含文字、空格、换行等
+        
+        我们在实际开发中，节点操作主要操作的是元素节点
+    
+    -->
+
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="demo">
+        <div class="box">
+            <span class="erweima">×</span>
+        </div>
+    </div>
+
+    <script>
+        // 1. 父节点 parentNode
+        var erweima = document.querySelector('.erweima');
+        // var box = document.querySelector('.box');
+        // 得到的是离元素最近的父级节点(亲爸爸) 如果找不到父节点就返回为 null
+        console.log(erweima.parentNode);
+
+
+        // 2. 子节点
+        var ul = document.querySelector('ul');
+        // childNodes 包含所有的子节点 包含 元素节点 文本节点等等（不常用）
+        console.log(ul.childNodes);  
+        console.log(ul.childNodes[0].nodeType); 
+        console.log(ul.childNodes[1].nodeType);
+        // children 获取所有的子元素节点 也是我们实际开发常用的
+        console.log(ul.children);
+
+
+        // 3. 第一个子节点和最有一个子节点
+        // firstChild 第一个子节点 不管是文本节点还是元素节点
+        console.log(ol.firstChild);
+        console.log(ol.lastChild);
+        // firstElementChild 返回第一个子元素节点 ie9才支持
+        console.log(ol.firstElementChild);
+        console.log(ol.lastElementChild);
+        // 实际开发的写法  既没有兼容性问题又返回第一个子元素（最常用）
+        console.log(ol.children[0]);
+        console.log(ol.children[ol.children.length - 1]);
+
+        // 4. 兄弟节点
+        var div = document.querySelector('div');
+        // nextSibling 下一个兄弟节点 包含元素节点或者 文本节点等等
+        console.log(div.nextSibling);
+        console.log(div.previousSibling);
+        // nextElementSibling 得到下一个兄弟元素节点
+        console.log(div.nextElementSibling);
+        console.log(div.previousElementSibling);
+
+
+        // 5. 创建和添加节点
+        // 创建节点元素节点
+        var li = document.createElement('li');
+        // 添加节点 node.appendChild(child)  node父级，child是子级，后面追加元素，类似于数组中的push
+        var ul = document.querySelector('ul');
+        ul.appendChild(li);
+        // 添加节点 node.insertBefore(child, 指定元素);
+        var lili = document.createElement('li');
+        ul.insertBefore(lili, ul.children[0]);
+
+
+
+        /* 总结 
+           关于dom操作，我们主要针对于元素的操作。主要有创建、增、删、改、查、属性操作、事件操作。
+
+           1. 创建
+           （1）document.write
+           （2）innerHTML
+           （3）createElement
+
+           2. 增
+           （1）appendChild
+           （2）insertBefore
+
+           3. 删
+           （1）insertBefore
+
+           4. 改
+           （1）修改元素属性： src、href、title等
+           （2）修改普通元素内容： innerHTML 、innerText
+           （3）修改表单元素： value、type、disabled等
+           （4）修改元素样式： style、className
+
+           5. 查
+            主要获取查询dom的元素
+           （1）DOM提供的API 方法：  getElementById、getElementsByTagName -> 古老用法 不太推荐 
+           （2）H5提供的新方法： querySelector、querySelectorAll ->  提倡
+           （3）利用节点操作获取元素： 父(parentNode)、子(children)、兄(previousElementSibling、nextElementSibling) -> 提倡
+
+           6. 属性操作
+           （1）setAttribute：设置dom的属性值
+           （2）getAttribute：得到dom的属性值
+           （3）removeAttribute移除属性
+           
+           7. 事件操作
+            鼠标时间         触发条件
+            onclick        鼠标点击左键触发
+            onmouseover    鼠标经过触发
+            onmouseout     鼠标离开触发
+            onfocus        获得鼠标焦点触发
+            onblur         失去鼠标焦点触发
+            onmousemove    鼠标移动触发
+            onmouseup      鼠标弹起触发
+            onmousedown    鼠标按下触发
+
+        
+        */
+
+</script>
+</body>
+</html>
