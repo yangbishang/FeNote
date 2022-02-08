@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/JQuery.js"></script>
+</head>
+<body>
+    <!-- 浏览器中提供的 XMLHttpRequest 用法比较复杂，所以 JQuery 对 XMLHttpRequest 进行了封装
+         提供了一系列 Ajax 相关的函数，极大地降低了Ajax的使用难度
+         JQuery 中发起 Ajax 请求最常用的三个方法如下：
+         1. $.get()
+         2. $.post()
+         3. $.ajax()    
+    -->
+    
+
+    <button id="btnGET">发起不带参数的GET请求</button> <br>
+    <button id="btnGET1">发起带参数的GET请求</button>  <br>
+    <button id="btnPOST">发起POST请求</button> <br>
+    <button id="btnAjax">发起AJAX请求</button>
+    <script>
+        $(function() {
+           
+            /* 
+               $.get(): 
+               $.post(url, [data], [callback]) 
+            */
+            $('#btnGET').on('click', function() {
+               $.get('http://www.liulongbin.top:3006/api/getbooks', function(res) {
+                   console.log(res);
+               })
+            }) 
+
+            $('#btnGET1').on('click', function() {
+               $.get('http://www.liulongbin.top:3006/api/getbooks', {id: 1}, function(res) {
+                   console.log(res);
+               })
+            }) 
+
+            /* 
+               $.post(url, [data], [callback])  
+            */
+            $('#btnPOST').on('click', function() {
+               $.post('http://www.liulongbin.top:3006/api/addbook', {bookname:'水浒传', author:'施耐庵', publisher:'出版社'}, function(res) {
+                   console.log(res);
+               })
+            }) 
+
+            /*
+                $.ajax({
+                    type: '', // 请求的方式，列如 GET 或 POST
+                    url: '', // 请求的 URL 地址
+                    data: {}, // 这次请求需要携带的数据
+                    success: function(res) {} // 请求成功之后的回调函数
+                })
+            */
+
+            $('#btnAjax').on('click', function() {
+                $.ajax({
+                    type: 'GET', // 请求的方式，列如 GET 或 POST
+                    url: 'http://www.liulongbin.top:3006/api/getbooks', // 请求的 URL 地址
+                    data: {id: 1}, // 这次请求需要携带的数据
+                    success: function(res) { // 请求成功之后的回调函数
+                        console.log(res);
+                    } 
+                })
+            })
+        })
+    </script>
+    
+
+   
+   
+    <script>
+        $(function() {
+            
+        })
+    </script>
+</body>
+</html>
