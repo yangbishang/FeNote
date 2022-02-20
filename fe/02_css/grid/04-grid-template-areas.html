@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* img {
+            width: 100px;
+            height: 100px;
+        } */
+
+        /* 网格区域 grid-template-areas
+           通过引用 grid-area 属性指定的网格区域的名称来定义网格模板
+
+           属性值
+           grid-area-name: 使用grid-area属性设置的网格区域的名称
+           .: 点号代表一个空的网格单元
+           none: 没有定义网格区域
+
+
+           需要注意的点：
+           1.每一行需要使用“”进行括起来
+           2.每一个值对应一个网格单元，不能漏掉任何一个网格单元
+           3.值与值之间使用空格隔开
+           4.行与行之间使用回车进行分隔没有其他符号
+        */
+
+        header {
+            height: 12.5%;
+            text-align: center;
+        }
+        
+        section {
+            display: grid;
+            width: 100%;
+            height: 87.5%;
+            grid-template-areas: "device map map map value"
+                                 "industry map map map weight"
+                                 "area map map map height"
+                                 "expire alarm statistical time trip";
+            grid-template-columns: 15.6vw 15.6vw auto 15.6vw 15.6vw;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 55px 50px;
+        }
+
+        section > article {position: relative;}
+        section > article.device {grid-area: device;}
+        section > article.map {grid-area: map;}
+        section > article.value {grid-area: value;}
+        section > article.industry {grid-area: industry;}
+        section > article.weight {grid-area: weight;}
+        section > article.area {grid-area: area;}
+        section > article.height {grid-area: height;}
+        section > article.expire {grid-area: expire;}
+        section > article.alarm {grid-area: alarm;}
+        section > article.statistical {grid-area: statistical;}
+        section > article.time {grid-area: time;}
+        section > article.trip {grid-area: trip;}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header><img src="../../resource/img/moto.png" alt=""></header>
+    <section>
+        <article class="device"><img src="../../resource/img/moto.png" ></article>
+        <article class="map"><img src="../../resource/img/moto.png" ></article>
+        <article class="value"><img src="../../resource/img/moto.png" ></article>
+        <article class="industry"><img src="../../resource/img/moto.png" ></article>
+        <article class="weight"><img src="../../resource/img/moto.png" ></article>
+        <article class="area"><img src="../../resource/img/moto.png" ></article>
+        <article class="height"><img src="../../resource/img/moto.png" ></article>
+        <article class="expire"><img src="../../resource/img/moto.png" ></article>        
+        <article class="alarm"><img src="../../resource/img/moto.png" ></article>
+        <article class="statistical"><img src="../../resource/img/moto.png" ></article>
+        <article class="time"><img src="../../resource/img/moto.png" ></article>
+        <article class="trip"><img src="../../resource/img/moto.png" ></article>
+
+    </section>
+</body>
+</html>

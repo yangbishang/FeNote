@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 布局的发展
+           table -> hack（float -> position -> inline）-> flexbox -> grid 
+        */
+
+        /* 
+           grid 布局优势
+           1. 固定或弹性轨道的轨道尺寸
+           2. 定位项目
+           3. 创建额外的轨道来保存内容
+           4. 对齐控制
+           5. 控制重叠内容（z-index）
+
+           Gird vs FlexBox
+           flex 是一维布局，只能在一条直线上（主轴）放置内容区块。（交叉轴主要是调整对齐，辅助作用）
+           grid 是二维布局，根据设计需求将内容区块放置到任何地方
+           grid并不是取代flexbox的，flexbox 与 grid 能很好地配合使用，比如grid用作整体布局，flex用作局部布局
+        */
+
+        /* grid 布局术语
+           1.网格容器（Grid Container）
+             元素应用 display:grid;, 它是其所有网格项的父元素
+           2.网格项（Grid Item）,网格容器的子元素（这个元素是html元素，记得与网格单元区分开）
+           3.网格线（Grid Line）,组成网格项的分界线（是我们在定义网格容器的时候就产生的，和网格项没有关联，它是一个虚拟的概念）
+
+           4.网格轨道（Grid Track）,两个相邻网格线之间为网格轨道，它和网格线有关，所以他和网格项没有关联（它会订到容器的边缘）
+           5.网格单元（Grid Cell）,相邻网格线隔出来的区域（记住是相邻的网格线；且记住要网格项区分开）
+           6.网格区域（Grid Area）,四个网格线包围的总空间（记住与网格单元区分开）
+
+           7.fr（单位）:剩余空间分配数。用于在一系列长度值中分配剩余空间，如果多个已指定了多个部分，则剩下的空间根据各自的数字按比例分配
+           8.gr（单位）:网格数。暂时不用
+        */
+
+        /* 容器中的属性
+           display; grid-template; gap; items; content; grid-auto; grid
+        */
+
+        /* display
+           1.grid: 生成块级网格
+           2.subgrid: 如果网格容器本身是网格项（嵌套网格容器），此属性用来继承其父网格容器的列、行大小
+           3.inline-grid: 生成行内网络（很少用，一般用flexbox） 
+
+           注意：
+           1.当元素设置了网格布局，column、float、clear、vertical-align 属性无效
+           2.subgrid目前不用
+         */
+        .container {
+            display: grid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">one</div>
+        <div class="item">two</div>
+        <div class="item">three</div>
+        <div class="item">four</div>
+        <div class="item">five</div>
+    </div>
+</body>
+</html>

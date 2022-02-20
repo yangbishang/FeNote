@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* start/end
+           grid-column/row-start/end--使用特定的网格线确定grid item在网格内的位置
+
+           参数说明
+           1. <line>: 可以是一个数字来指定相应编号的网格线，也可使用名称指代相应命名的网格线
+           2. span <number>: 网格项将跨越指定数量的网格轨道
+           3. span <name>: 网格项将跨越一些轨道，直到碰到指定命名的网格线，必须结合start使用才有效，单独使用无效。
+           4. auto: 自动布局，或则自动跨越，或则跨越一个默认的轨道
+           注意
+           1，如果没有声明grid-column-end/grid-row-end,默认情况下，该网格项将跨越1个轨道。
+           2，网格项可以相互重叠，可以直接使用z-index来控制它们的堆叠顺序
+
+
+
+           start/end 简写方式
+           grid-column =  grid-column-start + grid-column-end
+           grid-row = grid-row-start + grid-row-end
+           属性值
+           <start-line> / <end-line>
+           用 / 符号隔开
+         */
+
+
+
+
+         /* grid-area
+            --给grid item 进行命名以便于使用grid-template-areas属性创建模版时来进行引用
+
+            语法
+            grid-area:<name> | <row-start> / <column-start> /  <row-end> / <column-end>;
+
+            参数说明
+            <name>:grid-template-areas中定义的命名。
+            <row-start> / <column-start> /  <row-end> / <column-end>:可以是数字，也可以是网格线的名字。
+         
+            例子参考：04-grid-template-areas.html
+         */
+
+
+         /* self
+            justify-self--设置行轴方向的对齐方式
+            语法：
+            justify-self: start | end | center | stretch;
+
+            align-self--设置列轴方向的对齐方式
+            语法：
+            align-self:start | end | center | stretch;
+         */
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

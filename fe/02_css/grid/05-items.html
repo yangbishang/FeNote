@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+
+        /* 属性
+           1.justify-item: 水平方向
+           2.align-item: 垂直方向
+           3.place-item: 简写（垂直 水平）注意先列后行
+           
+           属性值
+           1.start: 内容与网格区域的左端对齐
+           2.end: 内容与网格区域的右端对齐
+           3.center: 内容位于网格区域的中间位置
+           4.strength: 内容宽度占据整个网格区域空间（这是默认值）
+        */
+
+        /* 
+           属性：
+           justify-content: 设置网格容器内的网格沿着行轴对齐网络的对齐方式
+           align-content: 设置网格容器内的网格沿纵轴对齐网格的对齐方式
+           place-content: <align-content>  <justify-content>;
+
+           值：
+           start :网格与网格容器的左边对齐
+           end:网格与网格容器的右边对齐 
+           center:网格与网格容器的中间对齐
+           strech :调整grid item 的大小，r让宽度填充整个网格容器（默认值）
+           space-around：在grid item之间设置均等宽度的空白间隙，其外边缘消息大小未中间空白间隙宽度的一半
+           sapce-between:在grid item 之间设置均等宽度空白间隙，其外边缘无间隙 
+           space-evenly:在每个grid item 之间设置均等宽度的空白间隙，包括外边缘
+        */
+
+        /* 
+           grid-auto(不建议使用，因为不好控制)
+           
+           grid-auto-columns/grid-auto-rows
+           指定自动生成的网络轨道（又名隐式网络轨道）的大小，即当我们创建的行或列不够时，自动填充行或列的即是隐式网络轨道。
+
+           grid-auto-flow
+           控制自动布局算法的工作方式
+           语法: grid-auto-flow:row | column | row dense | column dense; 
+         */
+        .container {
+            display: grid;
+            grid-template-columns: [one] 150px [two second]150px auto 150px 150px; /* 代表有5列，值为每列的宽度*/
+            grid-template-rows: 200px 200px 200px 200px 200px; /*有三行，值为每行的长度，如果多了，就会自动增加，所以一般用auto*/
+            justify-items: center;
+            align-items: center;
+
+            justify-content: space-evenly;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+        <div class="item">
+            <img src="../../resource/img/moto.png" alt="">
+        </div>
+
+    </div>
+</body>
+</html>

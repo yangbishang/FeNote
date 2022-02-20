@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 容器中的属性
+           display; grid-template; gap; items; content; grid-auto; grid
+        */
+
+        /* display
+           1.grid: 生成块级网格
+           2.subgrid: 如果网格容器本身是网格项（嵌套网格容器），此属性用来继承其父网格容器的列、行大小
+           3.inline-grid: 生成行内网络（很少用，一般用flexbox） 
+
+           注意：
+           1.当元素设置了网格布局，column、float、clear、vertical-align 属性无效
+           2.subgrid目前不用
+         */
+        .container {
+            display: grid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">one</div>
+        <div class="item">two</div>
+        <div class="item">three</div>
+        <div class="item">four</div>
+        <div class="item">five</div>
+    </div>
+</body>
+</html>

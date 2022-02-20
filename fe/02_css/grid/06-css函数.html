@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*  repeat()
+            --跟踪列表的重复片段，允许大量显示重复模式的列或行以更紧凑的形式编写
+
+            语法
+            1. grid-template-columns:repeat(repeat,values);
+            2. grid-template-rows:repeat(repeat,values);
+            
+            参数说明
+            repeat:<number> | auto-fill | auto-fit
+            1. number:列的宽度或行的高度，可以为fr,px,%，max-content,min-content,auto等    
+            2. auto-fill:以网格项为准自动填充，即当宽度够时，自动在列上填充空的单元格。
+            3. auto-fit:以网格容器为准自动填充。
+
+            注意
+            1，auto-fill和auto-fit必须结合minmax()使用才生效，具体数值是无效的。
+            例：repeat(auto-fill,minmax(100px,300px));
+            2，只适用于grid-template-columns和grid-template-rows
+        */
+
+        /* 
+           fit-content()
+           --根据公式Min(最大大小，最大值（最小大小，参数）)将给定大小夹紧为可用大小
+            
+           语法
+           grid-template-columns:fit-content(<length> | <percentage>);
+           grid-template-rows:fit-content(<length> | <percentage>); 
+            
+           eg:fit-content(100px)：表示最大是100px列宽。
+           */
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
