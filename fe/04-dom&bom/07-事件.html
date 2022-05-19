@@ -35,21 +35,12 @@
     <script>
         var btns = document.querySelectorAll('button');
         // 1. 传统监听方式
-        btns[0].onclick = function() {
-            alert('hi');
-        }
-        // 这个会把上面的覆盖
-        btns[0].onclick = function() {
-            alert('how are you');
-        }
+        btns[0].onclick = function() { alert('hi'); }
+        btns[0].onclick = function() { alert('这个会把上面的覆盖'); }
         
         // 2. 事件监听注册事件
-        btns[1].addEventListener('click', function() {
-            alert(22);
-        })
-        btns[1].addEventListener('click', function() {
-            alert('不会覆盖22f');
-        })
+        btns[1].addEventListener('click', function() { alert(22);})
+        btns[1].addEventListener('click', function() { alert('不会覆盖22f'); })
     </script>
 
 
